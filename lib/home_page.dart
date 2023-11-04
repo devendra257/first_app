@@ -20,6 +20,7 @@ import 'package:first_app/background_filter/bg_filter_blur.dart';
 import 'package:first_app/bloc_state/cubit_state/cubit_data.dart';
 import 'package:first_app/bottom_bar/bottom_bar.dart';
 import 'package:first_app/bottomappbar/bottomappbar.dart';
+import 'package:first_app/clipper/clipper_path.dart';
 import 'package:first_app/clipper/clippers.dart';
 import 'package:first_app/data_transfer.dart';
 import 'package:first_app/database/database_advance_controller.dart';
@@ -382,8 +383,12 @@ class _HomePageState extends State<HomePage> {
       "color": const Color.fromARGB(255, 0, 166, 255),
     },
     {
-      "title": "Clippers Path",
+      "title": "Clippers Over & RRect",
       "color": const Color.fromARGB(255, 170, 225, 255),
+    },
+    {
+      "title": "Clipper Paths",
+      "color": const Color.fromARGB(255, 255, 231, 183),
     },
   ];
 
@@ -924,7 +929,14 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ClippersPage(),
-                    ), //* Clipper Path
+                    ), //* Clipper ovel and rrect
+                  );
+                } else if (index == 75) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ClipperPathPage(),
+                    ), //* Clipper Paths
                   );
                 }
               },

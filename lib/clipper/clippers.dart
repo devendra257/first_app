@@ -1,15 +1,38 @@
 import 'package:flutter/material.dart';
 
-class _ClippersPagState extends StatefulWidget {
-  const _ClippersPagState({super.key});
+class ClippersPage extends StatefulWidget {
+  const ClippersPage({super.key});
 
   @override
-  State<_ClippersPagState> createState() => __ClippersPagStateState();
+  State<ClippersPage> createState() => _ClippersPageState();
 }
 
-class __ClippersPagStateState extends State<_ClippersPagState> {
+class _ClippersPageState extends State<ClippersPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Clipper'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(11.0),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(21),
+              child: Image.asset('assets/images/img_flower.jpg'),
+            ),
+            ClipOval(
+              child: Image.asset(
+                'assets/images/img_flower.jpg',
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
